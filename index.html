@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <script src="helpers.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+</head>
+
+<body style="background-color: black; zoom: 0.8;">
+    <div class="container" style="background-color: white; padding-bottom: 100px; padding-top: 50px;">
+        <div class="card" style="width: 18rem; margin: 0 auto;">
+            <img src="./nasa.png" class="card-img-top animate__animated animate__backInDown" alt="...">
+        </div>
+        <div class="container" style="padding-top: 50px;">
+            <div class="col-xs-10">
+                <form>
+                    <div class="form-group col-xs-6">
+                        <div class="row">
+                            <div class="col">
+                              <label for="exampleInputEmail1">Entrada</label>
+                              <!-- MRMRMLMLMRMRMLMLMMMLMLMRMRMLMLMRMRMMRMMMM -->
+                              <input type="text" class="form-control" id="entrada" name="entrada"
+                                  placeholder="MRMRMLMLMRMRMLMLMMMLMLMRMRMLMLMRMRMMRMMMM" aria-label="entrada">
+                              <small id="emailHelp" class="form-text text-muted">Digite uma entrada.</small>
+                            </div>
+                            <div class="col">
+                              <label for="exampleInputEmail1">Inicial</label>
+                              <!-- 11N -->
+                              <input type="text" class="form-control" id="inicial" name="inicial" placeholder="11N"
+                                  aria-label="inicial">
+                              <small id="emailHelp" class="form-text text-muted">Inicial.</small>
+                            </div>
+                          </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="Validar()">Validar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top: 10px;">
+            <div class="col-xs-10">
+                <form>
+                    <div class="form-group">
+                        <label class="">Solo percorrido:</label>
+                        <div id="progresSoloPercorrido" class="progress "></div>
+                        <label class="">Movimentos Executados:</label>
+                        <div id="progressMovimentos" class="progress "></div>
+                        <label class="">Perdas:</label>
+                        <div id="progressPerdas" class="progress "></div>
+                        <label class="">Rotações:</label>
+                        <div id="progressRotacoes" class="progress "></div>
+                    </div>
+            </div>
+            </form>
+        </div>
+
+        <div style="display: none;">
+            <div>Solo percorrido (%): <spam id="percorrido">0</spam>%</div>
+            <div>Movimentos executados (%): <spam id="movimentos">0</spam>%</div>
+            <div>Movimentos perdidos (%): <spam id="perda">0</spam>%</div>
+            <div>Rotações (%): <spam id="melhorCaminho">0</spam>%</div>
+        </div>
+
+        <div class="container" style="padding-top: 12px;">
+            <div class="col-xs-10">
+                <table id="tabela" border="1" class="table table-dark">
+                    <tr>
+                        <td id="e1">E1</td>
+                        <td id="e2">E2</td>
+                        <td id="e3">E3</td>
+                        <td id="e4">E4</td>
+                        <td id="e5">E5</td>
+                    </tr>
+
+                    <tr>
+                        <td id="d1">D1</td>
+                        <td id="d2">D2</td>
+                        <td id="d3">D3</td>
+                        <td id="d4">D4</td>
+                        <td id="d5">D5</td>
+                    </tr>
+
+                    <tr>
+                        <td id="c1">C1</td>
+                        <td id="c2">C2</td>
+                        <td id="c3">C3</td>
+                        <td id="c4">C4</td>
+                        <td id="c5">C5</td>
+                    </tr>
+
+                    <tr>
+                        <td id="b1">B1</td>
+                        <td id="b2">B2</td>
+                        <td id="b3">B3</td>
+                        <td id="b4">B4</td>
+                        <td id="b5">B5</td>
+                    </tr>
+
+                    <tr>
+                        <td id="a1">A1</td>
+                        <td id="a2">A2</td>
+                        <td id="a3">A3</td>
+                        <td id="a4">A4</td>
+                        <td id="a5">A5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById('progresSoloPercorrido').innerHTML = `
+    <div class="progress-bar" role="progressbar" style="width: `+ 0 + `%;" aria-valuenow="` + 0 + `" aria-valuemin="0" aria-valuemax="100">` + 0 + `%</div>
+    `;
+    document.getElementById('progressMovimentos').innerHTML = `
+    <div class="progress-bar" role="progressbar" style="width: `+ 0 + `%;" aria-valuenow="` + 0 + `" aria-valuemin="0" aria-valuemax="100">` + 0 + `%</div>
+    `;
+    document.getElementById('progressPerdas').innerHTML = `
+    <div class="progress-bar" role="progressbar" style="width: `+ 0 + `%;" aria-valuenow="` + 0 + `" aria-valuemin="0" aria-valuemax="100">` + 0 + `%</div>
+    `;
+    document.getElementById('progressRotacoes').innerHTML = `
+    <div class="progress-bar" role="progressbar" style="width: `+ 0 + `%;" aria-valuenow="` + 0 + `" aria-valuemin="0" aria-valuemax="100">` + 0 + `%</div>
+    `;
+</script>
+
+</html>
